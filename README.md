@@ -4,6 +4,14 @@
 
 This is a repository for our open source socket controller, suitable for both buisnesses and consumers.
 
+## Features
+
+- Turn on and off sockets remotely
+- Monitor energy usage
+- Ability to export data and logs
+- Create automation scripts
+- Configure access levels
+
 ## Business Description
 
 In our increasingly digitizing age, privacy intrusions and data breaches are becoming more common, and we are seeing a large push against that from the consumers. Our product adopts ethical and transparent business strategy that allows us to stand out from competition and appeal to privacy cautious individuals and businesses that value independency and transparency. We open source our software and hardware and instead sell cloud subscription to consumers and maintenance & repair services to businesses. Open nature of our product allows consumers and buisnesses to change cloud provider or even resort to self hosting, and it enables the community to make contrbutions or verify security of our solutions, to make sure that our products can be trusted.
