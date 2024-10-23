@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a repository for our open source smart home device/remote controller for businesses.
+This is a repository for our open source socket controller, suitable for both buisnesses and consumers.
 
 ## Business Description
 
@@ -10,8 +10,8 @@ In our increasingly digitizing age, privacy intrusions and data breaches are bec
 
 ### User Stories
 
-As an owner of smart home devices, I want to be sure that my devices are safe and respect my privacy so that corporations don't sell my personal data or I don't loose it as a result of a data breach due to poor security practices.
+As an owner of smart home devices, I want to be sure that my smart home socket controller is safe and respects my privacy so that corporations don't sell my personal data or I don't loose it as a result of a data breach due to poor security practices.
 
-As a business owner, I want a safe solution for remotely controlling my business, with the possibility of self hosting so that I can be sure that my business is safe and independant.
+As a business owner, I want a safe solution for remotely controlling sockets for my business, with the possibility of self hosting so that I can be sure that my business is safe and independant.
 
-As a tinkerer, I want an open source platform that I can use for controlling my smart home devices so that I don't have to rely on closed and proprietary solutions, and can instead modify it as I see fit.
+As a tinkerer, I want an open source platform that I can use for switching my smart home appliances so that I don't have to rely on closed and proprietary solutions, and can instead modify it as I see fit.
