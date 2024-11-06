@@ -1,25 +1,67 @@
-# Final-Project-IoT-and-Cloud-Computing
+# Smart Inventory Management System (SIMS)
 
 ## Overview
 
-This is a repository for our open source socket controller, suitable for both buisnesses and consumers.
+The Smart Inventory Management System (SIMS) is an IoT-powered solution for monitoring and managing warehouse inventory. It helps companies optimize storage, reduce waste, and ensure efficient operations through real-time tracking and data insights.
 
-## Features
+# Business Description
 
-- Turn on and off sockets remotely
-- Monitor energy usage
-- Ability to export data and logs
-- Create automation scripts
-- Configure access levels
+SIMS benefits sectors like retail, pharmaceuticals, and food storage by automating inventory tracking, reducing manual labor, and enhancing product safety. Its sensors monitor stock levels, shelf occupancy, temperature, and humidity to prevent loss and maintain optimal conditions. Alerts notify staff about critical changes, supporting swift action and cost savings.
 
-## Business Description
+# Features
 
-In our increasingly digitizing age, privacy intrusions and data breaches are becoming more common, and we are seeing a large push against that from the consumers. Our product adopts ethical and transparent business strategy that allows us to stand out from competition and appeal to privacy cautious individuals and businesses that value independency and transparency. We open source our software and hardware and instead sell cloud subscription to consumers and maintenance & repair services to businesses. Open nature of our product allows consumers and buisnesses to change cloud provider or even resort to self hosting, and it enables the community to make contrbutions or verify security of our solutions, to make sure that our products can be trusted.
+- Real-Time Monitoring: Tracks stock levels, environmental conditions, and shelf occupancy.
+- Automated Alerts: Issues alerts when inventory is low or conditions are out of range.
+- Data Dashboard: A web-based dashboard displays sensor data for easy oversight.
+- Role-Based Access: Differentiates permissions for staff and administrators.
 
-### User Stories
+# Sensors
 
-As an owner of smart home devices, I want to be sure that my smart home socket controller is safe and respects my privacy so that corporations don't sell my personal data or I don't loose it as a result of a data breach due to poor security practices.
+Weight Sensors: Track item quantities on shelves.
+Temperature Sensors: Ensure conditions for sensitive products.
+Humidity Sensors: Regulate storage conditions to prevent damage.
 
-As a business owner, I want a safe solution for remotely controlling sockets for my business, with the possibility of self hosting so that I can be sure that my business is safe and independant.
+## Project Structure
 
-As a tinkerer, I want an open source platform that I can use for switching my smart home appliances so that I don't have to rely on closed and proprietary solutions, and can instead modify it as I see fit.
+SIMS consists of a frontend dashboard, backend data management, and Azure IoT integration:
+
+- Frontend: Displays real-time data, alerts, and inventory summaries.
+- Backend: Manages data collection, storage, and alert triggers.
+- IoT Integration: Uses Azure IoT Hub to manage sensor data, simulate environments, and create device twins.
+
+## Setup and Running the Project
+
+### Prerequisites
+
+  - Software: Node.js, an IDE like VS Code, an Azure account with IoT capabilities.
+ 
+### Installation and Setup	
+ 
+ 1. Clone the Repository:
+ 
+		git clone https://github.com/YourRepo/SmartInventorySystem.git
+
+ 2. Run the Backend:
+   
+  - Set up a local server and connect to Azure IoT Hub for sensor data.
+
+ 3. Run the Frontend:
+  
+  - Use npm start in the frontend directory to launch the dashboard.
+
+4. Sensor Simulation:
+
+  - Use mock data scripts to simulate real-world data from weight, temperature, humidity, and presence sensors.
+
+### Testing and Deployment
+
+- Testing: 	Ensure Azure IoT connections and mock sensors work effectively.
+- Deployment: 	Use deployment scripts to set up in production and monitor performance with Postman.
+
+## Contributing
+
+Since this project is created as part of a university assignment, contributions are limited to team members and designated collaborators. Please coordinate with the project lead or instructor for any updates or 		pull requests.
+
+## License
+
+This project is for educational use only and may not be used or distributed outside the university without prior permission.
