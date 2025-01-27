@@ -6,7 +6,8 @@
 - ❌ C4 - Architecture Diagram - Component Level
 - ❌ Azure/AWS Cost Calculator
 - ⚙️ [IoT Device(or simulator) code](https://github.com/Fesyss/Final-Project-IoT-and-Cloud-Computing/blob/main/scripts/simulate_device.py)
-- ❌ MQTT broker service (e.g. Azure IoT Hub)
+- ✅ [MQTT broker service](
+https://portal.azure.com/#@cdv.pl/resource/subscriptions/5718b456-75a8-4442-8e40-49a2c0e1e03f/resourceGroups/SmartInventoryRG/overview) (e.g. Azure IoT Hub)
 - ❌ Data storage
 - ❌ REST API
 - ❌ Deployment instructions
