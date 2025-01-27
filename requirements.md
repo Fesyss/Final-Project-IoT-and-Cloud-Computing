@@ -1,0 +1,26 @@
+# Requirements
+
+- ❌ Business context description
+- ❌ C4 - Architecture Diagram - Context Level
+- ❌ C4 - Architecture Diagram - Container Level
+- ❌ C4 - Architecture Diagram - Component Level
+- ❌ Azure/AWS Cost Calculator
+- ❌ IoT Device(or simulator) code
+- ❌ MQTT broker service (e.g. Azure IoT Hub)
+- ❌ Data storage
+- ❌ REST API
+- ❌ Deployment instructions
+- ❌ Test instructions
+- ❌ Are all business cases covered?
+- ❌ Does it work?
+- ❌ Infrastructure as Code
+- ❌ Postman collection
+- ❌ Frontend
+- ❌ Customer Sign Up process
+- ❌ User management Device management
+- ❌ Is the solution secure?
+- ❌ IoT Device Configuration (e.g. Azure Device Twins)
+- ❌ Are there any 3rd party services used? (not Azure/AWS)
+- ❌ Number of connected
+- ❌ IoT devices (or simulators)
+- ❌ Number of used AWS/Azure services
