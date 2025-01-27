@@ -1,6 +1,6 @@
 # Requirements
 
-- ❌ Business context description
+- ⚙️ [Business context description](https://github.com/Fesyss/Final-Project-IoT-and-Cloud-Computing/blob/main/README.md)
 - ❌ C4 - Architecture Diagram - Context Level
 - ❌ C4 - Architecture Diagram - Container Level
 - ❌ C4 - Architecture Diagram - Component Level
