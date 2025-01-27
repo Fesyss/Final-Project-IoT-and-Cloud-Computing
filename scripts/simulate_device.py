@@ -1,23 +1,17 @@
 import time
 import random
 import json
-from azure.iot.device import IoTHubDeviceClient, Message
+from azure.iot.device import IoTHubDeviceClient, MethodRequest, MethodResponse, Message
 
-# our key from IoT hub 
+CONNECTION_STRING = "HostName=SmartInventoryHubRG.azure-devices.net;DeviceId=SimulatedDevicePython;SharedAccessKey=A4gvXV5Qz1g6n/MjjJ6TQw5B35yPncNBADkssnZms0w="
 
-CONNECTION_STRING = "HostName=smart-inventory-hub.azure-devices.net;DeviceId=simulated-device;SharedAccessKey=0xokZYfktAPDDmVIVnRl7lLR4gjFGA7rQiw3Fwag+28="
+TELEMETRY_INTERVAL = 5
 
 def generate_sensor_data(counter):
-    temperature = round(random.uniform(20.0, 30.0), 2)  
-    humidity = round(random.uniform(30.0, 70.0), 2)     
-    weight = round(random.uniform(50.0, 100.0), 2)      
-
-    # if there's 5 it means 5 m and 1 is 1 m 
-    if counter % 5 == 0:
-        distance = 5.0
-    else:
-        distance = 1.0
-
+    temperature = round(random.uniform(20.0, 30.0), 2)
+    humidity = round(random.uniform(30.0, 70.0), 2)
+    weight = round(random.uniform(50.0, 100.0), 2)
+    distance = 5.0 if (counter % 5 == 0) else 1.0
     return {
         "temperature": temperature,
         "humidity": humidity,
@@ -25,26 +19,39 @@ def generate_sensor_data(counter):
         "distance": distance
     }
 
-def main():
-    # con to IoT hub
-    client = IoTHubDeviceClient.create_from_connection_string(CONNECTION_STRING)
+def handle_method_request(method_request: MethodRequest):
+    global TELEMETRY_INTERVAL
+    if method_request.name == "setTelemetryInterval":
+        try:
+            new_interval = method_request.payload.get("interval", 5)
+            TELEMETRY_INTERVAL = new_interval
+            payload = {"result": True, "interval": TELEMETRY_INTERVAL}
+            status = 200
+        except Exception as e:
+            payload = {"result": False, "error": str(e)}
+            status = 400
+    else:
+        payload = {"result": False, "error": "Unknown method"}
+        status = 404
 
-    print("Sending data to IoT Hub.")
+    return MethodResponse.create_from_method_request(method_request, status, payload)
+
+def main():
+    client = IoTHubDeviceClient.create_from_connection_string(CONNECTION_STRING)
+    client.on_method_request_received = lambda req: client.send_method_response(handle_method_request(req))
     counter = 1
     try:
         while True:
             data = generate_sensor_data(counter)
-            message = Message(json.dumps(data))
-            message.content_encoding = "utf-8"
-            message.content_type = "application/json"
-
+            msg = Message(json.dumps(data))
+            msg.content_encoding = "utf-8"
+            msg.content_type = "application/json"
             print(f"Sending message #{counter}: {data}")
-            client.send_message(message)
-            print("Message sent!")
+            client.send_message(msg)
             counter += 1
-            time.sleep(5) #5s
+            time.sleep(TELEMETRY_INTERVAL)
     except KeyboardInterrupt:
-        print("Process interrupted by user.")
+        pass
     finally:
         client.shutdown()
 
