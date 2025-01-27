@@ -5,7 +5,7 @@
 - ❌ C4 - Architecture Diagram - Container Level
 - ❌ C4 - Architecture Diagram - Component Level
 - ❌ Azure/AWS Cost Calculator
-- ❌ IoT Device(or simulator) code
+- ✅ [IoT Device(or simulator) code](https://github.com/Fesyss/Final-Project-IoT-and-Cloud-Computing/blob/main/scripts/simulate_device.py)
 - ❌ MQTT broker service (e.g. Azure IoT Hub)
 - ❌ Data storage
 - ❌ REST API
