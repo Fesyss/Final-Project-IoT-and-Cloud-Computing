@@ -9,7 +9,7 @@
 - ✅ [MQTT broker service](
 https://portal.azure.com/#@cdv.pl/resource/subscriptions/5718b456-75a8-4442-8e40-49a2c0e1e03f/resourceGroups/SmartInventoryRG/overview) (e.g. Azure IoT Hub)
 - ✅ [Data storage](https://portal.azure.com/#@cdv.pl/resource/subscriptions/5718b456-75a8-4442-8e40-49a2c0e1e03f/resourceGroups/SmartInventoryRG/providers/Microsoft.Sql/servers/dbserverrg/databases/SmartInventoryDB/overview)
-- ❌ REST API
+- ✅ [REST API](https://globalstorage-hxg3dbacewetbgbn.uksouth-01.azurewebsites.net/)
 - ⚙️ [Deployment instructions](https://github.com/Fesyss/Final-Project-IoT-and-Cloud-Computing?tab=readme-ov-file#installation-and-setup)
 - ⚙️ [Test instructions](https://github.com/Fesyss/Final-Project-IoT-and-Cloud-Computing?tab=readme-ov-file#testing-and-deployment)
 - ❌ Are all business cases covered?
