@@ -23,7 +23,7 @@ def handle_method_request(method_request: MethodRequest):
     global TELEMETRY_INTERVAL
     if method_request.name == "setTelemetryInterval":
         try:
-            new_interval = method_request.payload.get("interval", 5)
+            new_interval = method_request.payload.get("interval", 10)
             TELEMETRY_INTERVAL = new_interval
             payload = {"result": True, "interval": TELEMETRY_INTERVAL}
             status = 200
