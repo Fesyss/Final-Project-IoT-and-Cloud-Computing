@@ -24,7 +24,7 @@ app.use(
 
 app.use(bodyParser.json());
 
-// ✅ Securely Load Database Credentials from `.env`
+// Load Database Credentials from `.env`
 const dbConfig = {
   user: process.env.DB_USER || "serveradminlogindb",
   password: process.env.DB_PASSWORD || "7Q3pDU4qT@c",
@@ -36,7 +36,7 @@ const dbConfig = {
   },
 };
 
-// ✅ Serve React Frontend in Azure (Fix for "No permission to view page")
+
 const buildPath = path.join(__dirname, "../my-react-app/build");
 app.use(express.static(buildPath));
 
@@ -44,7 +44,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(buildPath, "index.html"));
 });
 
-// ✅ Fix API Routes
+
 
 // POST /api/login route
 app.post("/api/logIn", async (req, res) => {
@@ -78,7 +78,7 @@ app.post("/api/logIn", async (req, res) => {
   }
 });
 
-// ✅ API Routes
+
 
 app.get("/api/timestamp-stats", async (req, res) => {
   try {
@@ -145,7 +145,7 @@ app.get("/api/temperature-stats", async (req, res) => {
   }
 });
 
-// ✅ Secure Password Hashing (For Debugging)
+// Password Hashing (For Debugging)
 const plainTextPassword = "password";
 const saltRounds = 10;
 
@@ -165,7 +165,7 @@ const hashPassword = async (password) => {
 };
 hashPassword(plainTextPassword);
 
-// ✅ Start the server
+// Start the server
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
