@@ -22,6 +22,6 @@ https://portal.azure.com/#@cdv.pl/resource/subscriptions/5718b456-75a8-4442-8e40
 - ✅ [Is the solution secure?] (https://globalstorage-hxg3dbacewetbgbn.uksouth-01.azurewebsites.net/)
 - ❌ IoT Device Configuration (e.g. Azure Device Twins)
 - ❌ Are there any 3rd party services used? (not Azure/AWS)
-- ❌ Number of connected
-- ❌ IoT devices (or simulators)
-- ❌ Number of used AWS/Azure services
+- ✅ Number of connected (1)
+- ✅ [IoT devices (or simulators)] (https://github.com/Fesyss/Final-Project-IoT-and-Cloud-Computing/tree/main/scripts)
+- ✅ Number of used AWS/Azure services (10 services)
