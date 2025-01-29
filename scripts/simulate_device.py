@@ -5,7 +5,7 @@ from azure.iot.device import IoTHubDeviceClient, MethodRequest, MethodResponse, 
 
 CONNECTION_STRING = "HostName=SmartInventoryHubRG.azure-devices.net;DeviceId=SimulatedDevicePython;SharedAccessKey=A4gvXV5Qz1g6n/MjjJ6TQw5B35yPncNBADkssnZms0w="
 
-TELEMETRY_INTERVAL = 5
+TELEMETRY_INTERVAL = 50
 
 def generate_sensor_data(counter):
     temperature = round(random.uniform(20.0, 30.0), 2)
@@ -23,7 +23,7 @@ def handle_method_request(method_request: MethodRequest):
     global TELEMETRY_INTERVAL
     if method_request.name == "setTelemetryInterval":
         try:
-            new_interval = method_request.payload.get("interval", 10)
+            new_interval = method_request.payload.get("interval", 1000)
             TELEMETRY_INTERVAL = new_interval
             payload = {"result": True, "interval": TELEMETRY_INTERVAL}
             status = 200
