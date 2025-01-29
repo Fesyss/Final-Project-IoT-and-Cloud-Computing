@@ -16,7 +16,7 @@ https://portal.azure.com/#@cdv.pl/resource/subscriptions/5718b456-75a8-4442-8e40
 - ❌ Does it work?
 - ❌ Infrastructure as Code
 - ❌ Postman collection
-- ❌ Frontend
+- ✅ [Frontend](https://github.com/Fesyss/Final-Project-IoT-and-Cloud-Computing/tree/main/my-react-app)
 - ❌ Customer Sign Up process
 - ❌ User management Device management
 - ❌ Is the solution secure?
