@@ -11,74 +11,78 @@ const DeviceManagement = () => {
   const [distanceData, setDistanceData] = useState([]);
   const [timestampData, setTimestampData] = useState([]);
 
+
   // Navigate back to User Management
   const handleNavigateBack = () => {
     navigate('/UserManagement');
   };
   // Fetch Temperature Data
-  const fetchTemperatureStats = async () => {
-    try {
-      const response = await fetch('http://localhost:3001/api/temperature-stats');
-      const result = await response.json();
-      if (result.success) {
-        setTemperatureData(result.data);
-      } else {
-        console.error('Error fetching temperature data:', result.message);
-      }
-    } catch (error) {
-      console.error('Error fetching temperature data:', error);
+const fetchTemperatureStats = async () => {
+  try {
+    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/temperature-stats`);
+    const result = await response.json();
+    if (result.success) {
+      setTemperatureData(result.data);
+    } else {
+      console.error('Error fetching temperature data:', result.message);
     }
-  };
-  // Fetch Humidity Data
-  const fetchHumidityStats = async () => {
-    try {
-      const response = await fetch('http://localhost:3001/api/humidity-stats');
-      const result = await response.json();
-      if (result.success) {
-        setHumidityData(result.data);
-      } else {
-        console.error('Error fetching humidity data:', result.message);
-      }
-    } catch (error) {
-      console.error('Error fetching humidity data:', error);
+  } catch (error) {
+    console.error('Error fetching temperature data:', error);
+  }
+};
+ // Fetch Humidity Data
+const fetchHumidityStats = async () => {
+  try {
+    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/humidity-stats`);
+    const result = await response.json();
+    if (result.success) {
+      setHumidityData(result.data);
+    } else {
+      console.error('Error fetching humidity data:', result.message);
     }
-  };
-  // Fetch Weight Data
-  const fetchWeightStats = async () => {
-    try {
-      const response = await fetch('http://localhost:3001/api/weight-stats');
-      const result = await response.json();
-      if (result.success) {
-        setWeightData(result.data);
-      }
-    } catch (error) {
-      console.error('Error fetching weight data:', error);
+  } catch (error) {
+    console.error('Error fetching humidity data:', error);
+  }
+};
+
+// Fetch Weight Data
+const fetchWeightStats = async () => {
+  try {
+    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/weight-stats`);
+    const result = await response.json();
+    if (result.success) {
+      setWeightData(result.data);
     }
-  };
-  // Fethch Distance Data
-  const fetchDistanceStats = async () => {
-    try {
-      const response = await fetch('http://localhost:3001/api/distance-stats');
-      const result = await response.json();
-      if (result.success) {
-        setDistanceData(result.data);
-      }
-    } catch (error) {
-      console.error('Error fetching distance data:', error);
+  } catch (error) {
+    console.error('Error fetching weight data:', error);
+  }
+};
+
+// Fetch Distance Data
+const fetchDistanceStats = async () => {
+  try {
+    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/distance-stats`);
+    const result = await response.json();
+    if (result.success) {
+      setDistanceData(result.data);
     }
-  };
-  // Fetch Timestamp Data
-  const fetchTimestampStats = async () => {
-    try {
-      const response = await fetch('http://localhost:3001/api/timestamp-stats');
-      const result = await response.json();
-      if (result.success) {
-        setTimestampData(result.data);
-      }
-    } catch (error) {
-      console.error('Error fetching timestamp data:', error);
+  } catch (error) {
+    console.error('Error fetching distance data:', error);
+  }
+};
+
+// Fetch Timestamp Data
+const fetchTimestampStats = async () => {
+  try {
+    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/timestamp-stats`);
+    const result = await response.json();
+    if (result.success) {
+      setTimestampData(result.data);
     }
-  };
+  } catch (error) {
+    console.error('Error fetching timestamp data:', error);
+  }
+};
  // Fetch all data in parallel
  useEffect(() => {
     const fetchStats = async () => {

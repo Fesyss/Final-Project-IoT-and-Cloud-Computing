@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
-import './log_in.css'; 
-import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import './log_in.css'; 
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 const LogIn = () => {
   const [email, setEmail] = useState(''); 
   const [password, setPassword] = useState(''); 
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null); 
   const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent form submission from reloading the page
 
     try {
       // Make a POST request to backend
-      const response = await fetch('http://localhost:3001/logIn', {
+      const response = await fetch(`${API_BASE_URL}/logIn`, {  // Using ENV variable
         method: 'POST',
         headers: {
           'Content-Type': 'application/json', 
@@ -29,7 +32,10 @@ const LogIn = () => {
         console.log('Login successful:', data);
         navigate('/UserManagement');
 
-        // mb add storing jwt tokents here 
+        // Store JWT token in localStorage (optional)
+        if (data.token) {
+          localStorage.setItem('authToken', data.token);
+        }
       } else {
         setSuccess(null); 
         setError(data.message || 'Invalid email or password'); 
@@ -53,7 +59,7 @@ const LogIn = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)} // Update email state
             required
-            placeholder="email"
+            placeholder="Email"
           />
         </div>
         <div className="form-group">
@@ -62,15 +68,15 @@ const LogIn = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)} // Update password state
             required
-            placeholder="password"
+            placeholder="Password"
           />
         </div>
         <div className='submit-button-wrapper'>
-        <button type="submit" className="login-button">Log In</button>
+          <button type="submit" className="login-button">Log In</button>
         </div>
       </form>
     </div>
   );
 };
-console.log(window.location)
+
 export default LogIn;
