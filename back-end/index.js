@@ -9,8 +9,19 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+const dbConfig = {
+  user: "serveradminlogindb",          
+  password: "7Q3pDU4qT@c",  
+  server: "dbserverrg.database.windows.net",
+  database: "SmartInventoryDB",
+  options: {
+    encrypt: true,  
+    trustServerCertificate: false,  
+  },
+};
+
 // login part 
-app.post("/api/logIn", async (req, res) => {
+app.post("/logIn", async (req, res) => {
   const { email, password } = req.body;
 
   try {
