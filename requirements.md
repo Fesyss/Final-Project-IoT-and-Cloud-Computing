@@ -1,10 +1,10 @@
 # Requirements
 
-- ⚙️ [Business context description](https://github.com/Fesyss/Final-Project-IoT-and-Cloud-Computing/blob/main/Business-context.md)
+- ✅ [Business context description](https://github.com/Fesyss/Final-Project-IoT-and-Cloud-Computing/blob/main/Business-context.md)
 - ❌ C4 - Architecture Diagram - Context Level
 - ❌ C4 - Architecture Diagram - Container Level
 - ❌ C4 - Architecture Diagram - Component Level
-- ❌ Azure/AWS Cost Calculator
+- ❌ [Azure/AWS Cost Calculator](https://github.com/Fesyss/Final-Project-IoT-and-Cloud-Computing/blob/main/Estimated-Cost.xlsx)
 - ⚙️ [IoT Device(or simulator) code](https://github.com/Fesyss/Final-Project-IoT-and-Cloud-Computing/blob/main/scripts/simulate_device.py)
 - ✅ [MQTT broker service](
 https://portal.azure.com/#@cdv.pl/resource/subscriptions/5718b456-75a8-4442-8e40-49a2c0e1e03f/resourceGroups/SmartInventoryRG/overview) (e.g. Azure IoT Hub)
