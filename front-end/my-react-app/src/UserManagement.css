@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #EA763B;
+  margin-right: 10px;
+}
+
+.logo-subtitle {
+  font-size: 16px;
+  color: #666;
+}
+
+.content {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 1200px;
+  height: 600px;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 29.05px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #EA763BF2;
+  text-align: center;
+}
+
+.profile-section {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-direction: row;
+
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+  margin: 0px 0px 0px 100px;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+h4 {
+  margin: 0;
+  color: #55555585;
+  text-align: left;
+  border-bottom: 0.1px solid #000000;
+  padding-bottom: 5px;
+  font-family: Inter;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13.31px;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin: 0px 0px 50px 0px;
+}
+
+.profile-button-wrap{
+  display: flex;
+  justify-content: flex-end;
+}
+.save-button {
+  width: 99px;
+  height: 29px;
+  border-radius: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.save-button:hover {
+  background-color: #d65b2e;
+}
+
+
+.profile-details-1{
+  display: flex;
+  flex-direction: column;
+  margin: 0px 150px;
+  width: 200px;
+}
+
+.profile-details-2{
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 150px;
+}
