@@ -141,4 +141,4 @@ const hashPassword = async (password) => {
   }
 };
 
-hashPassword(plainTextPassword); // Call the function
+hashPassword(plainTextPassword); 
