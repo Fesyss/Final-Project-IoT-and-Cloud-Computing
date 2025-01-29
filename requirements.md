@@ -5,7 +5,7 @@
 - ✅ [C4 - Architecture Diagram - Container Level](https://github.com/Fesyss/Final-Project-IoT-and-Cloud-Computing/blob/main/diagrams/c4-diagram-container.png)
 - ✅ [C4 - Architecture Diagram - Component Level](https://github.com/Fesyss/Final-Project-IoT-and-Cloud-Computing/blob/main/diagrams/c4-diagram-component.png)
 - ✅ [Azure/AWS Cost Calculator](https://github.com/Fesyss/Final-Project-IoT-and-Cloud-Computing/blob/main/Estimated-Cost.xlsx)
-- ⚙️ [IoT Device(or simulator) code](https://github.com/Fesyss/Final-Project-IoT-and-Cloud-Computing/blob/main/scripts/simulate_device.py)
+- ✅ [IoT Device(or simulator) code](https://github.com/Fesyss/Final-Project-IoT-and-Cloud-Computing/blob/main/scripts/simulate_device.py)
 - ✅ [MQTT broker service](
 https://portal.azure.com/#@cdv.pl/resource/subscriptions/5718b456-75a8-4442-8e40-49a2c0e1e03f/resourceGroups/SmartInventoryRG/overview) (e.g. Azure IoT Hub)
 - ✅ [Data storage](https://portal.azure.com/#@cdv.pl/resource/subscriptions/5718b456-75a8-4442-8e40-49a2c0e1e03f/resourceGroups/SmartInventoryRG/providers/Microsoft.Sql/servers/dbserverrg/databases/SmartInventoryDB/overview)
