@@ -4,49 +4,12 @@ const bodyParser = require("body-parser");
 const sql = require("mssql");
 const bcrypt = require("bcrypt");
 const path = require("path");
-require("dotenv").config(); // Load environment variables from .env
 
 const app = express();
-
-
-const allowedOrigins = [
-  "https://gentle-beach-04aa9b303.4.azurestaticapps.net", // Azure Static Web App
-  "https://globalstorage-hxg3dbacewetbgbn.uksouth-01.azurewebsites.net", // Backend (web app)
-  "http://localhost:3000", //  Local dev serv for debug
-];
-
-app.use(
-  cors({
-    origin: allowedOrigins,
-    credentials: true,
-  })
-);
-
+app.use(cors());
 app.use(bodyParser.json());
 
-// Load Database Credentials from `.env`
-const dbConfig = {
-  user: process.env.DB_USER || "serveradminlogindb",
-  password: process.env.DB_PASSWORD || "7Q3pDU4qT@c",
-  server: process.env.DB_SERVER || "dbserverrg.database.windows.net",
-  database: process.env.DB_NAME || "SmartInventoryDB",
-  options: {
-    encrypt: true,
-    trustServerCertificate: false,
-  },
-};
-
-
-const buildPath = path.join(__dirname, "../my-react-app/build");
-app.use(express.static(buildPath));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(buildPath, "index.html"));
-});
-
-
-
-// POST /api/login route
+// login part 
 app.post("/api/logIn", async (req, res) => {
   const { email, password } = req.body;
 
@@ -65,8 +28,8 @@ app.post("/api/logIn", async (req, res) => {
 
     let user = result.recordset[0];
     let hashedPassword = user.PasswordHash;
-
     let passwordMatches = await bcrypt.compare(password, hashedPassword);
+
     if (!passwordMatches) {
       return res.status(401).json({ success: false, message: "Invalid credentials" });
     }
@@ -78,8 +41,7 @@ app.post("/api/logIn", async (req, res) => {
   }
 });
 
-
-
+// API routes 
 app.get("/api/timestamp-stats", async (req, res) => {
   try {
     const pool = await sql.connect(dbConfig);
@@ -145,28 +107,38 @@ app.get("/api/temperature-stats", async (req, res) => {
   }
 });
 
-// Password Hashing (For Debugging)
+// Fix Static Files for Azure Deployment
+const buildPath = path.join(__dirname, "../my-react-app/build");
+app.use(express.static(buildPath));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(buildPath, "index.html"));
+});
+
+// Start of the Server
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
+///// Debug hasing passwrd 
 const plainTextPassword = "password";
 const saltRounds = 10;
 
 const hashPassword = async (password) => {
   try {
-    const salt = await bcrypt.genSalt(saltRounds);
-    const hashedPassword = await bcrypt.hash(password, salt);
-    console.log("DEBUG PASSWORD HASHING");
+    const salt = await bcrypt.genSalt(saltRounds); 
+   
+    const hashedPassword = await bcrypt.hash(password, salt); // Hashed password with salt (10)
+    console.log("            for debug purposes               ");
     console.log("Original Password:", password);
     console.log("Salt:", salt);
     console.log("Hashed Password:", hashedPassword);
-    return hashedPassword;
+
+    return hashedPassword; 
   } catch (err) {
     console.error("Error hashing password:", err);
     throw err;
   }
 };
-hashPassword(plainTextPassword);
 
-// Start the server
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+hashPassword(plainTextPassword); // Call the function
