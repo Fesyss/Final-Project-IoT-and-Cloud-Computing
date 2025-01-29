@@ -18,7 +18,7 @@ https://portal.azure.com/#@cdv.pl/resource/subscriptions/5718b456-75a8-4442-8e40
 - ❌ Postman collection
 - ✅ [Frontend](https://github.com/Fesyss/Final-Project-IoT-and-Cloud-Computing/tree/main/my-react-app)
 - ❌ Customer Sign Up process
-- ❌ User management Device management
+- ✅ [User management Device management] (https://github.com/Fesyss/Final-Project-IoT-and-Cloud-Computing/tree/main/my-react-app/src)
 - ❌ Is the solution secure?
 - ❌ IoT Device Configuration (e.g. Azure Device Twins)
 - ❌ Are there any 3rd party services used? (not Azure/AWS)
