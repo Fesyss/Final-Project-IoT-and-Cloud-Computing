@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F2DFCD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+.login-container {
+  width: 1280px;
+  height: 832px;
+  /* background: #ffffff; */
+  /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); */
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container h1 {
+  color: #EA763BF2;
+  font-family: 'Inter', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+  width: 254px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13.31px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 2px solid black;
+}
+
+input::placeholder {
+  color: #000000CC;
+  font-style: italic;
+}
+
+button {
+  position: absolute;
+  width: 194px;
+  height: 32px;
+  background-color: #EA763BF2;
+  border: none;
+  border-radius: 90px;
+  opacity: 1;
+  cursor: pointer;
+  color: #FFFFFF;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+.login-button{
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.submit-button-wrapper{
+  display: flex;
+    align-items: stretch;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+button:hover {
+  background-color: #d65b2e;
+  opacity: 0.9;
+}
+
+button:focus {
+  outline: none;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+}
+
+.success-message {
+  color: green;
+  text-align: center;
+}

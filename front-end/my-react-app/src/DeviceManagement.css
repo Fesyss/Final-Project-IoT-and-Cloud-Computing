@@ -1,0 +1,38 @@
+.logo{
+    display: flex;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+.device-section{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+.humidity-chart{
+ margin-top: 100px;   
+}
+.back-section{
+    margin-top: 30px;
+}
+.distance-chart{
+    margin-top: 100px;
+}
+.timestampchart-section{
+    margin: auto;
+}
+.title-chart-wrapper{
+    margin: auto;
+}
+.title-device{
+    margin-bottom: 45%;
+}
+.go-to-device-wrap{
+    margin-top: 30px;
+}
