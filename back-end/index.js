@@ -24,10 +24,10 @@ const dbConfig = {
 
 //  get to our page and also path for it 
 app.get('/logIn', (req, res) => {
-    res.sendFile(path.join(__dirname, '../front-end/my-react-app/build', 'index.html'));
+    res.sendFile(path.join(__dirname, '../my-react-app/build', 'index.html'));
 });
 //to get default build 
-app.use(express.static(path.join(__dirname, '../front-end/my-react-app/build')));
+app.use(express.static(path.join(__dirname, '../my-react-app/build')));
 
 
 
@@ -114,7 +114,7 @@ app.get('/api/weight-stats', async (req, res) => {
     res.status(500).json({ success: false, message: 'Error fetching data' });
   }
 });
-/////// humidity api route
+/////// humidity api route 
 app.get('/api/humidity-stats', async (req, res) => {
   try {
     const pool = await sql.connect(dbConfig);
